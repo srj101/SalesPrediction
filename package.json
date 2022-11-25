@@ -1,0 +1,14 @@
+{
+  "name": "sale_prediction_on_date",
+  "version": "1.0.0",
+  "description": "tensorflowjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.1.0"
+  }
+}
