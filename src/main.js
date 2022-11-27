@@ -1,9 +1,13 @@
+// Maximum values from the old backery.json
 const arr_max = [
   11, 5, 5, 5, 16, 3, 14, 4, 6, 5, 0, 0, 6, 2, 5, 2, 3, 4, 6, 4, 2, 1, 2,
 ];
+
+// Input validation from jan 1 to dec 30 according to the dataset from Bakery.json
 const inputMin = tf.tensor([102]);
 const inputMax = tf.tensor([1230]);
 
+// Model initialization
 async function initializeModle() {
   const model = await tf.loadLayersModel("model.json");
   return model;
@@ -13,6 +17,7 @@ console.log("hellow from mainjs");
 
 // const prediction = model.predict();
 
+// Input Normalization
 function InputData(data) {
   inputTensor = tf.tensor(data);
   const normalizedInput = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
@@ -23,10 +28,7 @@ function InputData(data) {
 //       .mul(labelMax.sub(labelMin))
 //       .add(labelMin);
 
-function reverseNormalize(out, max, min = 0) {
-  return out * (max - min) + min;
-}
-
+// Denormalize output tensor
 function OutPutArray(output, arr_max) {
   let res = [];
   let i = 0;
@@ -45,6 +47,8 @@ function OutPutArray(output, arr_max) {
   return res;
 }
 
+// Prepares the input data and runs the model
+// Clean up the output to a proper format
 async function allRun(input) {
   const model = await initializeModle();
   const i = InputData(input);
@@ -53,9 +57,14 @@ async function allRun(input) {
   return res;
 }
 
+// Element to show the sales amount for a selected product
 const contentDiv = document.getElementById("content");
+
+// Date and product input elements
 const dateVal = document.getElementById("dateVal");
 const productVal = document.getElementById("product");
+
+// Available products
 const products = [
   "",
   "Angbutter",
@@ -82,6 +91,9 @@ const products = [
   "Merinque Cookie",
 ];
 
+// Predicts the result of the input based on the model.
+// Takes Date and Product as input
+// Makes a chart of the prediction for each products
 const predict = async () => {
   const input = dateVal.value;
   if (!input) {
