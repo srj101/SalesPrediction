@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TensorFlow.js Tutorial</title>
+  <head>
+    <title>Future Sales</title>
 
-  <!-- Import TensorFlow.js -->
+    <!-- Import TensorFlow.js -->
 
-  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
-  <!-- Import tfjs-vis -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+    <script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
 
-</head>
-<body>
-  <!-- Import the main script file -->
-  <h1>TensorflowJs</h1>
+    <!-- Import tfjs-vis -->
+  </head>
+  <body>
+    <!-- Import the main script file -->
+    <h1>Future Sales Predictions</h1>
 
-  <script>
-    
-  </script>
-  <!-- <script src="script.js"></script> -->
-  <script src="main.js"></script>
-</body>
+    <input type="date" id="dateVal" />
+    <select name="product" id="product">
+      <option value="1">Angbutter</option>
+      <option value="2">Plain Bread</option>
+      <option value="3">Jam</option>
+      <option value="4">Tiramisu Croissant</option>
+      <option value="5">Croissant</option>
+      <option value="6">Caffee Latte</option>
+      <option value="7">Americano</option>
+      <option value="8">Cacao Deep</option>
+      <option value="9">Pain AU Chocolate</option>
+      <option value="10">Almond Croissant</option>
+      <option value="11">Croque Monsieur</option>
+      <option value="12">Mad Garlic</option>
+      <option value="13">Milk Tea</option>
+      <option value="14">Gateau Chocolate</option>
+      <option value="15">Pandoro</option>
+      <option value="16">Cheese Cake</option>
+      <option value="17">Lemon ADE</option>
+      <option value="18">Orange Pound</option>
+      <option value="19">Wiener</option>
+      <option value="20">Vanila Latte</option>
+      <option value="21">Berry ADE</option>
+      <option value="22">Tiramisu</option>
+      <option value="23">Merinque Cookies</option>
+    </select>
+    <button onclick="predict()">Predict</button>
+
+    <div id="content"></div>
+
+    <div id="chartDiv" style="width: 50%; height: 300px; margin: 0 auto"></div>
+
+    <script></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="main.js"></script>
+  </body>
 </html>
